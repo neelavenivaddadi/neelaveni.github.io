@@ -1,0 +1,418 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "5650a531-6e3a-48ed-a4ca-f96eb10abcb0",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (1087481969.py, line 4)",
+     "output_type": "error",
+     "traceback": [
+      "  \u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[1]\u001b[39m\u001b[32m, line 4\u001b[39m\n\u001b[31m    \u001b[39m\u001b[31mimport seaborn.as sns\u001b[39m\n                   ^\n\u001b[31mSyntaxError\u001b[39m\u001b[31m:\u001b[39m invalid syntax\n"
+     ]
+    }
+   ],
+   "source": [
+    "import pandas as pd\n",
+    "import numpay as np\n",
+    "import matplatlip.pyplat as plt\n",
+    "import seaborn.as sns\n",
+    "from sklearn.model_selection import train_Test_split\n",
+    "from sklearn.linear_model import leniar Regression\n",
+    "from sklearn.ensemble import Random Farest Regression\n",
+    "from sklearn.metrics import mean_squared_error,r2_score"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c260b4e6-5220-462c-8adf-18db8be44bbe",
+   "metadata": {},
+   "source": [
+    "###### Data processing "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "9065a8bb-a1e7-406d-8f82-d35acfa24985",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'pd' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mNameError\u001b[39m                                 Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[4]\u001b[39m\u001b[32m, line 1\u001b[39m\n\u001b[32m----> \u001b[39m\u001b[32m1\u001b[39m df=\u001b[43mpd\u001b[49m.read_csv(\u001b[33m'\u001b[39m\u001b[33muber.csv\u001b[39m\u001b[33m'\u001b[39m)\n",
+      "\u001b[31mNameError\u001b[39m: name 'pd' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "df=pd.read_csv('uber.csv')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c7ba8a86-4830-420c-95a1-0a4de8bf924c",
+   "metadata": {},
+   "source": [
+    "###### Handle.Missing Values"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "1183c3a7-0126-45a8-a29a-8aad5a0c904d",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'df' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mNameError\u001b[39m                                 Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[5]\u001b[39m\u001b[32m, line 1\u001b[39m\n\u001b[32m----> \u001b[39m\u001b[32m1\u001b[39m \u001b[43mdf\u001b[49m.df.dropna()\n",
+      "\u001b[31mNameError\u001b[39m: name 'df' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "df.df.dropna()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b94e1dd2-950b-4b36-af5f-cd297ec3ae58",
+   "metadata": {},
+   "source": [
+    "###### Convert Pickup datatime to datetime object"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "7abc7e73-b07b-4257-a3b4-7fa716a5a718",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "_IncompleteInputError",
+     "evalue": "incomplete input (3683629828.py, line 1)",
+     "output_type": "error",
+     "traceback": [
+      "  \u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[6]\u001b[39m\u001b[32m, line 1\u001b[39m\n\u001b[31m    \u001b[39m\u001b[31mdf['pickup_datetime']=pd.to_datetime(df['pickup_datetime']\u001b[39m\n                                                              ^\n\u001b[31m_IncompleteInputError\u001b[39m\u001b[31m:\u001b[39m incomplete input\n"
+     ]
+    }
+   ],
+   "source": [
+    "df['pickup_datetime']=pd.to_datetime(df['pickup_datetime']"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "62bf09fa-38e2-4314-9165-3f545d2596d8",
+   "metadata": {},
+   "source": [
+    "###### Extract Key Time Feaetures for analysis"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "6017f242-9fac-489c-a21b-e10ff10a3ad3",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'df' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mNameError\u001b[39m                                 Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[8]\u001b[39m\u001b[32m, line 1\u001b[39m\n\u001b[32m----> \u001b[39m\u001b[32m1\u001b[39m df[\u001b[33m'\u001b[39m\u001b[33mhour\u001b[39m\u001b[33m'\u001b[39m]=\u001b[43mdf\u001b[49m[\u001b[33m'\u001b[39m\u001b[33mpickup_datetime\u001b[39m\u001b[33m'\u001b[39m].df.hour\n\u001b[32m      2\u001b[39m df[\u001b[33m'\u001b[39m\u001b[33mday_of_meak\u001b[39m\u001b[33m'\u001b[39m]=df[\u001b[33m'\u001b[39m\u001b[33mpickup_date time\u001b[39m\u001b[33m'\u001b[39m].df.day_name()\n\u001b[32m      3\u001b[39m df[\u001b[33m'\u001b[39m\u001b[33mmatch\u001b[39m\u001b[33m'\u001b[39m]=df[\u001b[33m'\u001b[39m\u001b[33mpickup_datetime\u001b[39m\u001b[33m'\u001b[39m].df.macth\n",
+      "\u001b[31mNameError\u001b[39m: name 'df' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "df['hour']=df['pickup_datetime'].df.hour\n",
+    "df['day_of_meak']=df['pickup_date time'].df.day_name()\n",
+    "df['match']=df['pickup_datetime'].df.macth\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a6ee4d62-b2d4-4d7d-9fb4-7f5f3e5140bb",
+   "metadata": {},
+   "source": [
+    "###### Calcute travel distance using Haversine format (if Latitude/longtude are provided)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "4a721f05-8427-4322-8e3e-6ff851950fcd",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "unmatched ')' (705373253.py, line 6)",
+     "output_type": "error",
+     "traceback": [
+      "  \u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[10]\u001b[39m\u001b[32m, line 6\u001b[39m\n\u001b[31m    \u001b[39m\u001b[31ma=np.sin(delta_phi/2)**2+ np.cos(phi1)*np.cos9phi2)*np.sin(delta_lambda/2)**2\u001b[39m\n                                                      ^\n\u001b[31mSyntaxError\u001b[39m\u001b[31m:\u001b[39m unmatched ')'\n"
+     ]
+    }
+   ],
+   "source": [
+    "def haversine_distance(lat1,lon1,lat2,lon2):\n",
+    "    r=6371 #Earth's radius in km\n",
+    "    phil,phi2 =np.radias (lat1),np.radius (lat2)\n",
+    "    delta_phi=np.radius(lat2_lat1)\n",
+    "    delta_Lambda=np.radius(lon2-lon1)\n",
+    "    a=np.sin(delta_phi/2)**2+ np.cos(phi1)*np.cos9phi2)*np.sin(delta_lambda/2)**2\n",
+    "    res=2*  r* np.arcsin(np.sqnt(a))\n",
+    "    return res\n",
+    "    \n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "be209147-9a3c-41a3-86e3-760adac3540a",
+   "metadata": {},
+   "source": [
+    "#### Explaratary Data Analesis (EDA) & Visualizatias"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c7e90c94-fb7a-43b6-a184-287eb30d986d",
+   "metadata": {},
+   "source": [
+    "###### 1.Peak Hours(visualazation(Ride Demand))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "bb628ccb-4038-459d-a80a-739c73b9b9d1",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "unterminated string literal (detected at line 4) (2828961505.py, line 4)",
+     "output_type": "error",
+     "traceback": [
+      "  \u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[11]\u001b[39m\u001b[32m, line 4\u001b[39m\n\u001b[31m    \u001b[39m\u001b[31mplt.x label('hour of day(0-23))\u001b[39m\n                ^\n\u001b[31mSyntaxError\u001b[39m\u001b[31m:\u001b[39m unterminated string literal (detected at line 4)\n"
+     ]
+    }
+   ],
+   "source": [
+    "plt.figure(figsize=(10,5))\n",
+    "sns.complate(data=df,x='hours',palette=viridis\n",
+    " plt.title('uber rider demand by hour of the day')\n",
+    " plt.x label('hour of day(0-23))\n",
+    " plt.y label('total ride counts')\n",
+    " plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3d4af5ca-c99e-4c73-b194-b634bee1e297",
+   "metadata": {},
+   "source": [
+    "###### 2.Fare Trench by Distance or Hour"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "b11d14fb-fac9-476b-a3af-33f108a6eaf2",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "unterminated string literal (detected at line 5) (4096382123.py, line 5)",
+     "output_type": "error",
+     "traceback": [
+      "  \u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[12]\u001b[39m\u001b[32m, line 5\u001b[39m\n\u001b[31m    \u001b[39m\u001b[31mplt.y label (Avarege Fare ($)')\u001b[39m\n                                 ^\n\u001b[31mSyntaxError\u001b[39m\u001b[31m:\u001b[39m unterminated string literal (detected at line 5)\n"
+     ]
+    }
+   ],
+   "source": [
+    "plt.figure(figsize(10,5))\n",
+    "sns.Line plat (data_df, x='hour', y='fare_amount',estimatar='mean' error bar=None, marker='o', calour='orenge')\n",
+    "plt.title ('Average Fare amoung Across Different hours')\n",
+    "plt.x label ('hour of Day')\n",
+    "plt.y label (Avarege Fare ($)')\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "55b35304-ac55-46d6-9377-05fe37a883fe",
+   "metadata": {},
+   "source": [
+    "###### Featare correlation Heatmap "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "73594afa-c7fa-4452-953a-1657c09656ee",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "unterminated string literal (detected at line 5) (171926801.py, line 5)",
+     "output_type": "error",
+     "traceback": [
+      "  \u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[13]\u001b[39m\u001b[32m, line 5\u001b[39m\n\u001b[31m    \u001b[39m\u001b[31mplt.title(Feature correlation Matrix')\u001b[39m\n                                        ^\n\u001b[31mSyntaxError\u001b[39m\u001b[31m:\u001b[39m unterminated string literal (detected at line 5)\n"
+     ]
+    }
+   ],
+   "source": [
+    "plt.figure (figsize=(8,6))\n",
+    "numeric_cals=df.select_d type(include=[np.number])\n",
+    "sns.heatmap (numenic_cals.corr(),annat=(true)\n",
+    "(map='coolwarm',fmt\".2f\")\n",
+    "plt.title(Feature correlation Matrix')\n",
+    " plt.show()\n",
+    "             "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5575fd8e-a5fb-496d-b494-ca07ae58c733",
+   "metadata": {},
+   "source": [
+    "###### Machine learing Model far Demand Fareasting"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "b46b7136-f0a8-4abb-a870-ef8f31abfb7b",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'df' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mNameError\u001b[39m                                 Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[14]\u001b[39m\u001b[32m, line 2\u001b[39m\n\u001b[32m      1\u001b[39m features=[\u001b[33m'\u001b[39m\u001b[33mhour\u001b[39m\u001b[33m'\u001b[39m,\u001b[33m'\u001b[39m\u001b[33mmonth\u001b[39m\u001b[33m'\u001b[39m]\n\u001b[32m----> \u001b[39m\u001b[32m2\u001b[39m X=\u001b[43mdf\u001b[49m[feature]\n\u001b[32m      3\u001b[39m Y=df[\u001b[33m'\u001b[39m\u001b[33mfare_amoung\u001b[39m\u001b[33m'\u001b[39m]\n",
+      "\u001b[31mNameError\u001b[39m: name 'df' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "features=['hour','month']\n",
+    "X=df[feature]\n",
+    "Y=df['fare_amoung']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "3a8a9a73-f70e-4086-9c38-d4cb76fe165d",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (882765606.py, line 1)",
+     "output_type": "error",
+     "traceback": [
+      "  \u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[15]\u001b[39m\u001b[32m, line 1\u001b[39m\n\u001b[31m    \u001b[39m\u001b[31msplitdata into traning and testing\u001b[39m\n              ^\n\u001b[31mSyntaxError\u001b[39m\u001b[31m:\u001b[39m invalid syntax\n"
+     ]
+    }
+   ],
+   "source": [
+    "splitdata into traning and testing \n",
+    "x_train,x_test,y_train,y_test=trains_test_split(x,y,test_split(x,y test_size0.2,randam_statel=42)\n",
+    "        model random farest Regression (n-eslimation=100,randam model.fit(x_train,y-train)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1b1a8124-2aa6-43ed-81a5-547394a58633",
+   "metadata": {},
+   "source": [
+    "###### Make Predictions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "cb5b4d13-62c4-48f0-add4-3c15c6de19ca",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'model' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mNameError\u001b[39m                                 Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[16]\u001b[39m\u001b[32m, line 1\u001b[39m\n\u001b[32m----> \u001b[39m\u001b[32m1\u001b[39m y_pred=\u001b[43mmodel\u001b[49m.predit(x_test)\n",
+      "\u001b[31mNameError\u001b[39m: name 'model' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "y_pred=model.predit(x_test)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1d31948b-2f22-4ad1-a074-5139795baf9f",
+   "metadata": {},
+   "source": [
+    "###### Evalated Model.Preformance"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "cef7b355-be4a-43b7-8363-51d103232964",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "mse=mam_squared_error(y_test,y_pred)\n",
+    "r2=r2_score(y_test,y_pred)\n",
+    "print(f\"model EvalurationMatrics:\")\n",
+    "print(f\"Mean squared Error(MSE):{MSE:2f}\n",
+    "print(f\"R_squared(R2):{r2:.2f})"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:anaconda3]",
+   "language": "python",
+   "name": "conda-env-anaconda3-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
